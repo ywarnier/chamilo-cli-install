@@ -126,8 +126,8 @@ if (empty($params['U'])) {
 	$error = true;
 }
 if (empty($params['P'])) {
-	echo "  -P param must be defined.\n";
-	$error = true;
+	echo "  -P param not defined. Using null instead (no password).\n";
+	//$error = true;
 }
 if (empty($params['u'])) {
 	echo "  -u param must be defined.\n";
@@ -143,7 +143,7 @@ $new_version_stable = true;
 $loginForm = $loginForm = $params['l'];
 $passForm = $params['p'];
 $dbUsernameForm = $params['U'];
-$dbPassForm = $params['P'];
+$dbPassForm = empty($params['P']) ? null : $params['P'];
 $urlForm = $params['u'];
 $installType = 'new';
 // Values with defaults
