@@ -64,7 +64,11 @@ $_configuration['course_folder'] = 'courses/';
 /**
  * Inclusion initialization - includes necessary Chamilo libs 
  */
-require dirname(__FILE__).'/../inc/lib/main_api.lib.php';
+if ($new_version == '1.10.0') {
+    require dirname(__FILE__).'/../inc/lib/api.lib.php';
+} else {
+    require dirname(__FILE__).'/../inc/lib/main_api.lib.php';
+}
 require_once dirname(__FILE__).'/../inc/lib/database.lib.php'; //also defines constants
 require_once 'install.lib.php';
 
