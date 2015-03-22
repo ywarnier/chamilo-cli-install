@@ -31,16 +31,6 @@ define('MAX_FORM_FIELD_LENGTH', 80);
 
 /*		PHP VERSION CHECK */
 
-// PHP version requirement.
-define('REQUIRED_PHP_VERSION', '5.4');
-
-if (!function_exists('version_compare') || version_compare( phpversion(), REQUIRED_PHP_VERSION) < 0) {
-	$global_error_code = 1;
-	// Incorrect PHP version.
-	require dirname(__FILE__).'/../inc/global_error_message.inc.php';
-	die();
-}
-
 session_start();
 $install_language = $_SESSION['install_language'] = 'english';
 
