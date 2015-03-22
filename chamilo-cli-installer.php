@@ -70,6 +70,7 @@ if ($new_version == '1.10.0') {
     require dirname(__FILE__).'/../inc/lib/main_api.lib.php';
 }
 require_once dirname(__FILE__).'/../inc/lib/database.lib.php'; //also defines constants
+require_once dirname(__FILE__).'/../inc/lib/add_course.lib.inc.php';
 require_once 'install.lib.php';
 
 // The function api_get_setting() might be called within the installation scripts.
